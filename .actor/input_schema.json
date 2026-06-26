@@ -1,0 +1,76 @@
+{
+    "title": "Shopify Scraper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "storeUrls": {
+            "title": "Shopify store URLs",
+            "type": "array",
+            "description": "One or more Shopify store URLs to scrape (e.g. https://allbirds.com). Works with any Shopify store — custom domains included.",
+            "editor": "stringList",
+            "prefill": ["https://allbirds.com"]
+        },
+        "maxProductsPerStore": {
+            "title": "Max products per store",
+            "type": "integer",
+            "description": "Maximum number of products to scrape per store. Leave empty to scrape all products.",
+            "editor": "number",
+            "minimum": 1
+        },
+        "includeVariants": {
+            "title": "Include variants",
+            "type": "boolean",
+            "description": "When enabled, each product variant (size, color, etc.) is output as a separate row. When disabled, only one row per product with variant summary.",
+            "default": false
+        },
+        "scrapeReviews": {
+            "title": "Scrape reviews",
+            "type": "boolean",
+            "description": "Fetch product reviews. Auto-detects the review platform used by each store (supports Judge.me, Yotpo, Stamped.io, Okendo, Loox).",
+            "default": false
+        },
+        "maxReviewsPerProduct": {
+            "title": "Max reviews per product",
+            "type": "integer",
+            "description": "Maximum number of reviews to fetch per product. Only used when Scrape reviews is enabled.",
+            "editor": "number",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 1000
+        },
+        "scrapeCollections": {
+            "title": "Scrape collections",
+            "type": "boolean",
+            "description": "Also scrape the store's collections (categories). Collection records are added to the dataset with record_type: 'collection'.",
+            "default": false
+        },
+        "onlyAvailable": {
+            "title": "Only available products",
+            "type": "boolean",
+            "description": "When enabled, skips products where all variants are out of stock.",
+            "default": false
+        },
+        "minDiscount": {
+            "title": "Minimum discount %",
+            "type": "integer",
+            "description": "Only return products discounted by at least this percentage (compare-at price vs current price). Leave empty to return all products.",
+            "editor": "number",
+            "minimum": 1,
+            "maximum": 99
+        },
+        "createdAfter": {
+            "title": "Created after",
+            "type": "string",
+            "description": "Only return products created after this date. Use ISO 8601 format: YYYY-MM-DD (e.g. 2026-01-01).",
+            "editor": "datepicker"
+        },
+        "proxyConfig": {
+            "title": "Proxy configuration",
+            "type": "object",
+            "description": "Proxy settings. Datacenter proxies are sufficient for Shopify.",
+            "editor": "proxy",
+            "prefill": { "useApifyProxy": true }
+        }
+    },
+    "required": ["storeUrls"]
+}

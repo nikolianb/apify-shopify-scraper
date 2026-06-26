@@ -1,0 +1,26 @@
+{
+    "name": "shopify-scraper",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Scrape products from any Shopify store — prices, variants, images, inventory",
+    "engines": {
+        "node": ">=18"
+    },
+    "scripts": {
+        "start": "node dist/main.js",
+        "start:dev": "tsx watch src/main.ts",
+        "build": "tsc",
+        "lint": "eslint src --ext .ts"
+    },
+    "dependencies": {
+        "apify": "^3.2.0",
+        "crawlee": "^3.14.0"
+    },
+    "devDependencies": {
+        "@apify/eslint-config": "^0.4.0",
+        "@types/node": "^22.0.0",
+        "eslint": "^8.57.0",
+        "tsx": "^4.19.0",
+        "typescript": "^5.7.0"
+    }
+}

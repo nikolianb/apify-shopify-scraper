@@ -1,0 +1,10 @@
+{
+    "actorSpecification": 1,
+    "name": "shopify-scraper",
+    "version": "1.0",
+    "defaultMemoryMbytes": 512,
+    "minMemoryMbytes": 128,
+    "maxMemoryMbytes": 1024,
+    "input": "./input_schema.json",
+    "readme": "./README.md"
+}
