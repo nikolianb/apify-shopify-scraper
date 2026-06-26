@@ -199,7 +199,6 @@ const crawler = new HttpCrawler({
                         average_rating,
                         scraped_at: new Date().toISOString(),
                     });
-                    await Actor.charge({ eventName: 'result-scraped' });
                     storedThisPage++;
                 }
             } else {
@@ -231,7 +230,6 @@ const crawler = new HttpCrawler({
                     average_rating,
                     scraped_at: new Date().toISOString(),
                 });
-                await Actor.charge({ eventName: 'result-scraped' });
                 storedThisPage++;
             }
         }
