@@ -1,5 +1,4 @@
 node_modules/
+dist/
 storage/
 .env
-src/
-tsconfig.json
